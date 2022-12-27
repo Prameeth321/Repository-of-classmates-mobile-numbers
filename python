@@ -1,0 +1,51 @@
+contacts = {
+    "Prameth": 9381520954, "Devisri Prasad": 9568623576, "Divyansh": 7006703701,"": 9381520954, "chandu": 9568623576, "Mohammad Sanib": 7006703701,
+    "Faruk": 9103182131, "Shekar": 7654507963, "Vamshi": 6299410557, "Bhagath": 9634217890,
+    "Abhay": 892380890, "Jagadish": 7488187309, "Srikar": 7535025802, "Abdulla Khan": 7077656922,
+    "Amalraj": 8440842169, "Praveen": 7326869234, "Ashish Kumar": 6239370615, "Matta Reddy": 8630502611,
+    "Sree Charan": 8569804781, "Harjeet Singh": 7073927307, "Karthik": 7500125655, "Janakiram": 761954876,
+    "Mayank Singh": 9392212260, "Anil Kumar": 9115883308, "Prashant Swami": 8889303719, "Prateek Poonia": 7247818133,
+    "Priyanshu Basu": 9149045570, "Rachait Talwar": 9876023290, "Rishabh Tripathi": 63070556091, "Ritik Kumar": 9696754672,
+    "Shabaz": 7061221822, "Saksham Pradhan": 9342771181, "Sarthak": 9381444789, "Shafe Ahsan": 9749420008,
+    "Shrey Garg": 8307209328, "Sijo Saji": 9676079128, "Dhanush Kumar": 8897123757, "Vikalp Shakya": 8847453863, "Villiers": 9356774688,
+    "Vishnu": 9381520954, "Aditya": 7658864572,"Yuvraj Sinha": 8210246045, "Sneha Sharma": 7488863584,
+    "Parav Sharma": 6207937383, "Rakesh": 7855032278, "Kunal Shah": 9509776730
+}
+def single_search():
+    name = input(">>>Enter the name of the student whose contact is needed: ").title()
+    if name in contacts:
+        print(f"\n{name}: {contacts[name]}")
+    else:
+        print("\nNo such contact found")
+
+def multiple_search():
+    result = {}
+    s1 = []
+    s = 0
+    name1 = input(">>>Enter the names of the contacts separated by commas: ").split(",")
+    for i in name1:
+        i = i.title()
+        if i in contacts:
+            result[i] = contacts[i]
+        else:
+            s1.append(i)
+            s += 1
+    if s > 0:
+        print(f"\nCouldn't find contacts {s1}  ")
+    else:
+
+        print(result)
+
+print("KOC23 CONTACTS")
+
+choice = int(input(
+    "\nWould you like to: \n\n1.Search for a single contact \n2.Search for multiple contacts \n3.List all the contacts \n\n \n>>>Enter your choice: "))
+
+if choice == 1:
+    single_search()
+elif choice == 2:
+    multiple_search()
+elif choice == 3:
+    print(contacts)
+else:
+    print("Choose from the given options!")
